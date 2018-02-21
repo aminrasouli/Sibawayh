@@ -104,7 +104,6 @@ export default class Tabs extends React.Component {
                         </NavLink>
                     </NavItem>
                 </Nav>
-
                 <TabContent activeTab={this.state.activeTab}>
                     <TabPane tabId="1">
                         <Row>
@@ -113,7 +112,7 @@ export default class Tabs extends React.Component {
                                     display: 'flex',
                                     justifyContent: 'center'
                                 }}>
-                                    <webview style={{
+                                    <webview className="webViewPdf" style={{
                                         width: '100%',
                                         minHeight: '900px'
                                     }} src={this.CreatePdfPath(this.getCourseData()['vajegan']['pdf'])}/>
@@ -128,7 +127,7 @@ export default class Tabs extends React.Component {
                                     display: 'flex',
                                     justifyContent: 'center'
                                 }}>
-                                    <webview style={{
+                                    <webview className="webViewPdf" style={{
                                         width: '100%',
                                         minHeight: '900px'
                                     }} src={this.CreatePdfPath(this.getCourseData()['darsanem']['pdf'])}/>
@@ -143,7 +142,7 @@ export default class Tabs extends React.Component {
                                     display: 'flex',
                                     justifyContent: 'center'
                                 }}>
-                                    <webview style={{
+                                    <webview className="webViewPdf" style={{
                                         width: '100%',
                                         minHeight: '900px'
                                     }} src={this.CreatePdfPath(this.getCourseData()['ghavaed']['pdf'])}/>
@@ -158,7 +157,7 @@ export default class Tabs extends React.Component {
                                     display: 'flex',
                                     justifyContent: 'center'
                                 }}>
-                                    <webview style={{
+                                    <webview className="webViewPdf" style={{
                                         width: '100%',
                                         minHeight: '900px'
                                     }} src={this.CreatePdfPath(this.getCourseData()['tamrinat']['pdf'])}/>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Jumbotron, Badge} from 'reactstrap';
 
-const Jumbutron = (props) => {
+const Jumbutron = () => {
     return (
         <Jumbotron>
             <h1 className="display-3 animated fadeInDown" style={{fontWeight: 700}}>

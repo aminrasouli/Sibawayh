@@ -47,7 +47,7 @@ const CustomMenuTemplate = [
     {
         label: 'نمایش',
         submenu: [
-            {role: 'toggledevtools'},
+            // {role: 'toggledevtools'},
             {role: 'reload'},
             {role: 'resetzoom'},
             {role: 'zoomin'},
@@ -106,9 +106,8 @@ function createWindow() {
         resizable: false,
         icon: path.join(__dirname, 'src/assets/img/arabic2.ico')
     });
-    console.log(path.join(__dirname, 'src/assets/img/arabic2.ico'));
     splashscreen.loadURL(`file://${__dirname}/src/public/splash.html`);
-    splashscreen.webContents.on('did-finish-load', () => {
+    splashscreen.webContents.once('did-finish-load', () => {
         splashscreen.show();
     });
     mainWindow = new BrowserWindow({
@@ -141,13 +140,16 @@ function createWindow() {
     mainWindow.loadURL(indexPath);
 
     mainWindow.once('ready-to-show', () => {
-        mainWindow.show();
-        splashscreen.close();
+        setTimeout(() => {
+            splashscreen.destroy();
+            mainWindow.show();
+        }, 3000);
         // Open the DevTools automatically if developing
         if (dev) {
             mainWindow.webContents.openDevTools();
         }
     });
+
 
     mainWindow.on('closed', function () {
         // Dereference the window object, usually you would store windows
