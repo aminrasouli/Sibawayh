@@ -9,6 +9,7 @@ let options = {
     'name': 'Arabic2',
     'ignore': ['./builds', './.git', './.idea'],
     'out': './builds',
+    'asar': true,
     'overwrite': true,
     'prune': true,
     'win32metadata': {
